@@ -5,6 +5,8 @@
  * Description: A brief description of the Plugin.
  * Version: The Plugin's Version Number, e.g.: 1.0
  * Author: Name Of The Plugin Author
+ * Text Domain: outdated-browser
+ * Domain Path: /languages
  * Author URI: http://URI_Of_The_Plugin_Author
  * License: A "Slug" license name e.g. GPL2
  */
@@ -15,12 +17,13 @@ function outdated_browser(){
 	$outdated_js = $outdated_browser_url . 'js/outdatedBrowser.min.js';
 	$outdated_main = $outdated_browser_url . 'js/main.js';
 	
-	echo(
-	'<div id="outdated">
-     	<h6>Your browser is out-of-date!</h6>
-     	<p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-     	<p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-	</div>');
+	echo ( '<div id="outdated"><h6>' );
+	echo __( 'Your browser is out-of-date!', 'outdated-browser' );
+	echo ('</h6><p>');
+	echo __( 'Update your browser to view this website correctly.', 'outdated-browser');
+	echo ( '<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">' );
+	echo __( 'Update my browser now', 'outdated-browser');
+	echo ( '</a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p></div> ');
 
 	wp_enqueue_style('outdated-browser-style', $outdated_css);
 	wp_enqueue_script( 'outdated-browser-js', $outdated_js);
