@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: WP Outdated Browser
- * Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
- * Description: A brief description of the Plugin.
- * Version: The Plugin's Version Number, e.g.: 1.0
- * Author: Name Of The Plugin Author
+ * Plugin URI: http://deblynprado.com/wp-outdated-browser
+ * Description: This plugin show a message if your browser is outdated.
+ * Version: 1.0
+ * Author: Deblyn Prado
  * Text Domain: outdated-browser
  * Domain Path: /languages
- * Author URI: http://URI_Of_The_Plugin_Author
+ * Author URI: http://deblynprado.com
  * License: A "Slug" license name e.g. GPL2
  */
 
