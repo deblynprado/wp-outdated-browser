@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name: WP Outdated Browser
- * Plugin URI: http://deblynprado.com/wp-outdated-browser
  * Description: This plugin show a message if your browser is outdated.
  * Version: 1.0
  * Author: Deblyn Prado
