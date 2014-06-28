@@ -10,6 +10,10 @@
  * License: A "Slug" license name e.g. GPL2
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 function outdated_browser(){
 	$outdated_browser_url =  plugin_dir_url( __FILE__ );
 	$outdated_css = $outdated_browser_url . 'css/outdatedBrowser.min.css';
