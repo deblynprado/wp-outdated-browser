@@ -44,5 +44,9 @@ function outdated_scripts(){
 	wp_enqueue_script( 'outdated-browser-main', $outdated_main, array(), "1.0.0", true);
 }
 
+function outdated_textdomain() {
+  load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+}
+
 add_action('wp_enqueue_scripts', 'outdated_scripts');
 add_action('wp_footer', 'outdated_browser');
