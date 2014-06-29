@@ -40,7 +40,7 @@ function outdated_browser(){
 	*/
 	wp_enqueue_style('outdated-browser-style', $outdated_css);
 	wp_enqueue_script( 'outdated-browser-js', $outdated_js);
-	wp_enqueue_script( 'outdated-browser-main', $outdated_main);	
+	wp_enqueue_script( 'outdated-browser-main', $outdated_main, array(), "1.0.0", true)
 }
 
 add_action('wp_footer', 'outdated_browser');
