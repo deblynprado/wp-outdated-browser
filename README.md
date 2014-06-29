@@ -21,7 +21,7 @@ This is a plugin to check if your user is using the lastest version of a browser
 * Activate the plugin through the `Plugins` menu in WordPress 
 
 ##Frequently Asked Questions##
-**Whats happened if my user is using a updated browser?** 
+**Whats happened if my user is using a updated browser?**  
 Nothing! This plugin just works if your using a outdated browser.   
 
 ##Changelog##
