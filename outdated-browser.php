@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: WP Outdated Browser
- * Description: This plugin show a message if your browser is outdated.
- * Version: 1.0
- * Author: Deblyn Prado
- * Text Domain: outdated-browser
- * Domain Path: /languages
- * Author URI: http://deblynprado.com
- * License: A "Slug" license name e.g. GPL2
- */
+* Plugin Name: WP Outdated Browser
+* Description: This plugin show a message if your browser is outdated.
+* Version: 1.0.0
+* Author: Deblyn Prado
+* Text Domain: outdated-browser
+* Domain Path: /languages
+* Author URI: http://deblynprado.com
+* License: GPL2
+*/
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -35,7 +35,7 @@ function outdated_scripts(){
 	$outdated_css = $outdated_browser_url . 'css/outdatedBrowser.min.css';
 	$outdated_js = $outdated_browser_url . 'js/outdatedBrowser.min.js';
 	$outdated_main = $outdated_browser_url . 'js/main.js';
-	
+
 	/**
 	* Calling styles and scripts with WP native functions
 	*/
@@ -45,7 +45,7 @@ function outdated_scripts(){
 }
 
 function outdated_textdomain() {
-  load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+	load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 }
 
 add_action('wp_enqueue_scripts', 'outdated_scripts');
