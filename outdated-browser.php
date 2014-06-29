@@ -16,13 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function outdated_browser(){
 	/**
-	 * Plugin version.
-	 *
-	 * @var string
-	 */
-	const VERSION = '1.0.0';
-
-	/**
 	* Define files path
 	*/
 	$outdated_browser_url =  plugin_dir_url( __FILE__ );
