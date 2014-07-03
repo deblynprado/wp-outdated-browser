@@ -32,8 +32,8 @@ function outdated_scripts(){
 	* Define files path
 	*/
 	$outdated_browser_url =  plugin_dir_url( __FILE__ );
-	$outdated_css = $outdated_browser_url . 'css/outdatedBrowser.min.css';
-	$outdated_js = $outdated_browser_url . 'js/outdatedBrowser.min.js';
+	$outdated_css = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.css';
+	$outdated_js = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.js';
 	$outdated_main = $outdated_browser_url . 'js/main.js';
 
 	/**
