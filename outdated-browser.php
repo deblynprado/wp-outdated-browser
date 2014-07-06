@@ -10,151 +10,230 @@
 * License: GPL2
 */
 
+/**
+* This Plugin show a Message if user is using a Old version of any browser.
+*/
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class AvalioParametros {
+class OutdatedBrowser {
  
-    function __construct(){        
-        add_action('admin_menu', array( $this, 'avalio_parametros_page' ));
-    }
- 
-    function avalio_parametros_page() {
-        global $avalio_parametros_admin;
- 
-        $avalio_parametros_admin = add_submenu_page(
-            'options-general.php',               // The ID of the top-level menu page to which this submenu item belongs
-            __( 'Outdated Browser Options', 'outdated-browser' ),              // The value used to populate the browser's title bar when the menu page is active
-            'Outdated Browser',                              // The label of this submenu item displayed in the menu
-            'administrator',                        // What roles are able to access this submenu item
-            'outdated-browser-options',             // The ID used to represent this submenu item
-            array($this, 'avalio_parametros_admin')// The callback function used to render the options for this submenu item
-        );
- 
-        /*
-        global $current_user;
-        $user_id = $current_user->ID;
-        $membership_levels = $current_user->membership_levels;
- 
-        if($membership_levels[0]->name == 'Top'){
-            $avalio_parametros_top = add_submenu_page(
-                'avalio',               // The ID of the top-level menu page to which this submenu item belongs
-                'Plano Top',              // The value used to populate the browser's title bar when the menu page is active
-                'Plano Top',                              // The label of this submenu item displayed in the menu
-                'edit_posts',                        // What roles are able to access this submenu item
-                'avalio-parametros-top',             // The ID used to represent this submenu item
-                array($this, 'avalio_parametros_top')// The callback function used to render the options for this submenu item
-            );
-        }
-        */
-    }    
-
-    function avalio_parametros_admin() {
-        /*
-        if($_POST['opcoes']){
-            printr($_POST);
-        }
-        */
-        $opcoes = $_POST['opcoes'];
-        if( is_array($opcoes) ) {
-            update_option( 'outdated_background_color', $opcoes['background_color'] );
-            update_option( 'outdated_font_color', $opcoes['font_color'] );
-            update_option( 'outdated_language', $opcoes['lang'] );
-        }
-    ?>
-        <div class="wrap">
-            <div id="icon-tools" class="icon32"></div>
-            <h2><?php _e( 'Outdated Browser Settings','outdated-browser' )?></h2>
-            <br><br>
-            <form method="POST" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
- 
-                <table class="form-table">
-                    <tr valign="top">
-                        <td scope="row"><label for="background-color"><?php _e( 'Background Color', 'outdated-browser' ); ?></label></td>
-                        <td><input name="opcoes[bkg_color]" id="bkg-color" type="text" value="<?php echo get_option('outdated_background_color');?>" class="regular-text" /></td>
-                    </tr>
-                    <tr valign="top">
-                        <td scope="row"><label for="font-color"><?php _e( 'Font Color', 'outdated-browser' ); ?></label></td>
-                        <td><input name="opcoes[font_color]" id="font-color" type="text" value="<?php echo get_option('outdated_font_color');?>" class="regular-text" /></td>
-                    </tr>
-                    <tr valign="top">
-                        <td scope="row"><label for="select-language"><?php _e( 'Select Language', 'outdated-browser' ); ?></label></td>
-                        <td>
-                        	<select name="opcoes[lang]" id="select-language">                        		
-                        		<option value=""><?php _e( 'Select a language', 'outdated-browser' ); ?></option>
-                        		<option value="en" <?php selected( 'en' == get_option('lang') ); ?>><?php _e( 'English', 'outdated-browser' ); ?></option>
-                        		<option value="pt" <?php selected( 'pt' == get_option('lang') ); ?>><?php _e( 'Portuguese', 'outdated-browser' ); ?></option>
-                        	</select>
-                        </td>
-                    </tr>
-                </table>
- 					<?php print_r($opcoes);?>
-                <br><br>
-                <input type="submit" class="button-primary" value="Salvar">
-            </form>
-        </div><!-- wrap -->
-    <?php
-		return array($opcoes);    
-    }
-    
-}
-
-function outdated_browser(){
 	/**
-	* Setting the HTML content.
+	* Constructor function
+	* @return: null
+	* @param: null
 	*/
-	echo ( '<div id="outdated"><h6>' );
-	echo __( 'Your browser is out-of-date!', 'outdated-browser' );
-	echo ( '</h6><p>' );
-	echo __( 'Update your browser to view this website correctly.', 'outdated-browser' );
-	echo ( '<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">' );
-	echo __( 'Update my browser now', 'outdated-browser' );
-	echo ( '</a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p></div> ');
-}
 
-function outdated_scripts(){
-	/**
-	* Define files path
-	*/
-	$outdated_browser_url =  plugin_dir_url( __FILE__ );
-	$outdated_css = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.css';
-	$outdated_js = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.js';
-	$outdated_main = $outdated_browser_url . 'js/main.js';
-
-	/**
-	* Calling styles and scripts with WP native functions
-	*/
-	wp_enqueue_style( 'outdated-browser-style', $outdated_css );
-	wp_enqueue_script( 'outdated-browser-js', $outdated_js);
-	wp_enqueue_script( 'outdated-browser-main', $outdated_main, array(), "1.0.0", true );
-}
-
-function outdated_textdomain() {
-	load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
-}
-
-add_action( 'wp_enqueue_scripts', 'outdated_scripts' );
-add_action( 'wp_footer', 'outdated_browser' );
-
-///END of v1.0.0
+	function __construct(){
+    add_action( 'admin_menu', array( $this, 'avalio_parametros_page' ) );
+    add_action( 'admin_init', array( $this, 'eg_settings_api_init' ) );
+    //add_action( 'admin_init', array( $this, 'options_init' ) );
+    add_action( 'admin_enqueue_scripts', array( $this, 'add_color_picker' ) );
+    add_action( 'wp_enqueue_scripts', array( $this, 'outdated_scripts' ) );
+		add_action( 'wp_footer', array( $this, 'outdated_browser' ) );
+		add_action( 'admin_notices', array( $this, 'outdated_messages' ));
+	}
  
-add_action( "init", "AvalioParametrosInit", 1 );
- 
-function AvalioParametrosInit() {
-    global $AvalioParametros;
-    $AvalioParametros = new AvalioParametros();
+  function avalio_parametros_page() {
+	  global $outdated_param;
+	  $outdated_param = add_menu_page(
+	  	__( 'Outdated Options', 'outdated-browser' ),	// Page Title
+	  	'Outdated Browser',														// Menu Name
+	  	'activate_plugins',														// Capabilities
+	  	'outdated-browser-options',										// Page Slug
+	  	array( $this, 'print_html_options' ),					// Callback function to render HTML
+	  	'dashicons-admin-site'												// Menu Icon
+	  );	  
+  }
+
+  // ------------------------------------------------------------------
+	 // Add all your sections, fields and settings during admin_init
+	 // ------------------------------------------------------------------
+	 //
+	 
+	 function eg_settings_api_init() {
+	 	// Creating Sections
+	 	add_settings_section(
+			'outdated_general_section',										// Section id
+			__( 'General Options', 'outdated-browser' ),	// Section title
+			array( $this, 'general_section_callback' ),		// Callback with Section HTML
+			'outdated-browser-options'										// Page slug where is section will apear
+		);
+	 	
+	 	// Creating Settings
+	 	add_settings_field(
+			'background-color',														// Setting name
+			__( 'Background color', 'outdated-browser' ),	// Setting Label
+			array( $this, 'color_setting_callback' ),						// Callback with the HTML of setting (any HTML element)
+			'outdated-browser-options',										// Slug the page where he will apear
+			'outdated_general_section'										// Section where he will apear
+		);
+
+		add_settings_field(
+			'font-color',														// Setting name
+			__( 'Font color', 'outdated-browser' ),	// Setting Label
+			array( $this, 'font_setting_callback' ),						// Callback with the HTML of setting (any HTML element)
+			'outdated-browser-options',										// Slug the page where he will apear
+			'outdated_general_section'										// Section where he will apear
+		);
+
+		add_settings_field(
+			'browser',																		// Setting name
+			__( 'More than', 'outdated-browser' ),	// Setting Label
+			array( $this, 'browser_setting_callback' ),			// Callback with the HTML of setting (any HTML element)
+			'outdated-browser-options',										// Slug the page where he will apear
+			'outdated_general_section',										// Section where he will apear
+			$browsers = array(
+				'borderImage'		=> 'IE11',
+				'transform'			=> 'IE10',
+				'boxShadow'			=> 'IE9',
+				'borderSpacing'	=> 'IE8'
+			)			
+		);
+
+		add_settings_field(
+			'language',																		// Setting name
+			__( 'Select Language', 'outdated-browser' ),	// Setting Label
+			array( $this, 'lang_setting_callback' ),			// Callback with the HTML of setting (any HTML element)
+			'outdated-browser-options',										// Slug the page where he will apear
+			'outdated_general_section',										// Section where he will apear
+			$langs = array(
+				'en'		=> __( 'English', 'outdated-browser' ),
+				'pt-BR'	=> __( 'Portuguese', 'outdated-browser'),
+				'es'		=> __( 'Spanish', 'outdatd-browser')
+			)			
+		);
+	 	
+	 	// Register all settings
+	 	register_setting( 'outdated-browser-options', 'background-color' );
+	 	register_setting( 'outdated-browser-options', 'font-color' );
+	 	register_setting( 'outdated-browser-options', 'browser' );
+	 	register_setting( 'outdated-browser-options', 'language' );
+	 }
+	 
+	  
+	 // ------------------------------------------------------------------
+	 // Settings section callback function
+	 // ------------------------------------------------------------------
+	 //
+	 // This function is needed if we added a new section. This function 
+	 // will be run at the start of our section
+	 //
+	 
+	 function general_section_callback() {
+	 	echo __( 'Customize the message apearance', 'outdated-browser' );
+	 }
+	 
+	 // ------------------------------------------------------------------
+	 // Callback function for our example setting
+	 // ------------------------------------------------------------------
+	 //
+	 // creates a checkbox true/false option. Other types are surely possible
+	 //
+	 
+	 function color_setting_callback() {
+	 	echo '<input name="background-color" id="bkg-color" type="text" value="' . get_option( 'background-color' ) . '" class="code"/>';	 	
+	 }
+
+	 function font_setting_callback() {
+	 	echo '<input name="font-color" id="font-color" type="text" value="' . get_option( 'font-color' ) . '" class="code"/>';
+	 }
+
+	 function browser_setting_callback( $browsers ) {	
+	 	echo '<select name="browser">';
+	 	foreach( $browsers as $key => $browser ) :
+	 		echo '<option id="language" value="' . $key . '" ' . selected( get_option( 'browser' ), $key, true ) . '>' . $browser . '</option>';
+	 	endforeach;
+	 	echo '</select>';
+	 }
+
+	 function lang_setting_callback( $langs ) {	
+	 	echo '<select name="language">';
+	 	foreach( $langs as $key => $lang ) :
+	 		echo '<option id="language" value="' . $key . '" ' . selected( get_option( 'language' ), $key, true ) . '>' . $lang . '</option>';
+	 	endforeach;
+	 	echo '</select>';
+	 }
+
+  function print_html_options() { ?>
+		<form method="POST" action="options.php">
+			<?php settings_fields( 'outdated-browser-options' );
+			do_settings_sections( 'outdated-browser-options' );
+			submit_button();
+			$result = $this->get_setting_saved();			
+			?>
+		</form>
+  <?php }  
+
+  /**
+  * This function get the value of all the options and return them in an array
+  * @return: array();
+  */
+  function get_setting_saved() {
+  	$settings = array(
+  		'fontColor'		=> get_option( 'font-color' ),
+  		'bkgColor'		=> get_option( 'background-color' ),
+  		'lang'				=> get_option( 'language' ),
+  		'browser'			=> get_option( 'browser' )
+  	);
+  	return($settings);
+  }
+
+  function outdated_messages() {
+  	settings_errors();
+  }  
+
+	function add_color_picker( $hook ) {
+  	if( is_admin() ) {
+    	// Add the color picker css file      
+    	wp_enqueue_style( 'wp-color-picker' );     
+    	// Include our custom jQuery file with WordPress Color Picker dependency
+    	wp_enqueue_script( 'custom-script-handle', plugins_url( 'js/admin.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+  	}
+	}
+
+	function outdated_textdomain() {
+		load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+	}	
+
+	function outdated_browser(){
+		/**
+		* Setting the HTML content.
+		*/
+		echo ( '<div id="outdated"><h6>' );
+		echo __( 'Your browser is out-of-date!', 'outdated-browser' );
+		echo ( '</h6><p>' );
+		echo __( 'Update your browser to view this website correctly.', 'outdated-browser' );
+		echo ( '<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">' );
+		echo __( 'Update my browser now', 'outdated-browser' );
+		echo ( '</a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p></div> ');		
+		$this->outdated_scripts($this->get_setting_saved());
+	}
+
+	function outdated_scripts( $opt ){
+		/**
+		* Define files path
+		*/		
+		$outdated_browser_url =  plugin_dir_url( __FILE__ );
+		$outdated_css = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.css';
+		$outdated_js = $outdated_browser_url . 'assets/outdatedbrowser/outdatedBrowser.min.js';
+		$outdated_main = $outdated_browser_url . 'js/main.js';
+
+		/**
+		* Calling styles and scripts with WP native functions
+		*/
+		wp_enqueue_style( 'outdated-browser-style', $outdated_css );
+		wp_enqueue_script( 'outdated-browser-js', $outdated_js);
+		wp_enqueue_script( 'outdated-browser-main', $outdated_main, array(), "1.0.0", true );		
+		wp_localize_script( 'outdated-browser-main', 'outOptions', $opt);
+	}	
 }
-// Color Picker
-add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
-function wptuts_add_color_picker( $hook ) {
+	
+add_action( "init", "OutdatedInit", 1 );
  
-    if( is_admin() ) {
-     
-        // Add the color picker css file      
-        wp_enqueue_style( 'wp-color-picker' );
-         
-        // Include our custom jQuery file with WordPress Color Picker dependency
-        wp_enqueue_script( 'custom-script-handle', plugins_url( 'js/main.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-    }
+function OutdatedInit() {
+  global $OutdatedBrowser;
+  $OutdatedBrowser = new OutdatedBrowser();
 }
