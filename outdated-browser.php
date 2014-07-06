@@ -5,7 +5,7 @@
 * Version: 1.0.0
 * Author: Deblyn Prado
 * Text Domain: outbws
-* Domain Path: /languages
+* Domain Path: languages
 * Author URI: http://deblynprado.com
 * License: GPL2
 */
@@ -27,6 +27,7 @@ class OutdatedBrowser {
 	*/
 
 	function __construct(){
+		add_action( 'init', array( $this, 'outdated_textdomain' ) );
     add_action( 'admin_menu', array( $this, 'avalio_parametros_page' ) );
     add_action( 'admin_init', array( $this, 'eg_settings_api_init' ) );
     //add_action( 'admin_init', array( $this, 'options_init' ) );
