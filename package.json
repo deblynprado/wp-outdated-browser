@@ -1,6 +1,6 @@
 {
   "name": "wp-outdated-browser",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "An outdated browser checker for WordPress",
   "main": "Gruntfile.js",
   "scripts": {

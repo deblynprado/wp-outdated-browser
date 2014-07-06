@@ -1,6 +1,6 @@
 #WP Outdated Browser#
 **Contributors:** deblynprado  
-**Tags:** Browser, Outdated, Message Outdated  
+**Tags:** Browser, Outdated, Message Outdated, CSS, CSS3  
 **Requires at least:** 3.6.0  
 **Tested up to:** 3.9.1  
 **License:** GPLv2  
@@ -8,7 +8,7 @@
 
 Show a message if the user is using an outdated browser.
 
-***Actually this plugin uses the version 1.0.1 of Outdated Browser***
+***Actually this plugin uses the version 1.0.2 of Outdated Browser***
 
 ##Description##
 This plugin is a version of [Outdated Browser Projetct](http://outdatedbrowser.com/) created by [Bürocratik](https://github.com/burocratik).
@@ -25,5 +25,12 @@ This is a plugin to check if your user is using the lastest version of a browser
 Nothing! This plugin just works if your using a outdated browser.   
 
 ##Changelog##
+2.0.0 - 28/06/2014  
+* Update core to v1.0.2  
+* Enabled option to set message background color in WordPress panel  
+* Enabled option to set text color in WordPress panel  
+* Included some languages: English, Portuguese, Finnish, Deutsch and Italian  
+* Change all structure of the plugin  
+
 1.0.0 - 28/06/2014
 * First version
