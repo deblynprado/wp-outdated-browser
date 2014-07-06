@@ -2,7 +2,7 @@
 /**
 * Plugin Name: WP Outdated Browser
 * Description: This plugin show a message if your browser is outdated.
-* Version: 1.0.0
+* Version: 2.0.0
 * Author: Deblyn Prado
 * Text Domain: outbws
 * Domain Path: languages
