@@ -29,8 +29,7 @@ class OutdatedBrowser {
 	function __construct(){
 		add_action( 'init', array( $this, 'outdated_textdomain' ) );
     add_action( 'admin_menu', array( $this, 'avalio_parametros_page' ) );
-    add_action( 'admin_init', array( $this, 'eg_settings_api_init' ) );
-    //add_action( 'admin_init', array( $this, 'options_init' ) );
+    add_action( 'admin_init', array( $this, 'outdated_settings_init' ) );    
     add_action( 'admin_enqueue_scripts', array( $this, 'add_color_picker' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'outdated_scripts' ) );
 		add_action( 'wp_footer', array( $this, 'outdated_browser' ) );
@@ -54,7 +53,7 @@ class OutdatedBrowser {
 	 // ------------------------------------------------------------------
 	 //
 	 
-	 function eg_settings_api_init() {
+	 function outdated_settings_init() {
 	 	// Creating Sections
 	 	add_settings_section(
 			'outdated_general_section',										// Section id
