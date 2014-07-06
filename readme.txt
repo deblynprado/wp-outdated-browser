@@ -4,7 +4,7 @@ Tags: Browser, Outdated, Message Outdated, CSS, CSS3, HTML
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A7JF6A9UTZTQC&lc=BR&item_name=Deblyn%20Prado¤cy_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 3.6.0
 Tested up to: 3.9.1
-Stable tag: trunk
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,3 +42,13 @@ The plugin get the language default of your WordPress installation. If you want 
 
 1.0.0 - 28/06/2014
 * First version
+
+== Upgrade Notice ==
+= New version 2.0.0!!!! =
+
+Now you can customize the layout of the alert by your Administration area! Select the color of the text and the background, press save and done!!  
+
+In this version we add native support for some languages: English, Portuguese, Italian, Finnish and Deutsch.
+The plugin will respect the default language of your WordPress installation. If you\'re using WordPress in some of languages your alert message will be translated automatically!
+
+Be tuned! We will add more languages very soon! 
