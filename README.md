@@ -25,8 +25,9 @@ This is a plugin to check if your user is using the lastest version of a browser
 Nothing! This plugin just works if your using a outdated browser.   
 
 ##Changelog##
-2.0.0 - 28/06/2014  
+2.0.0 - 06/07/2014  
 * Update core to v1.0.2  
+* Included core like a git submodule
 * Enabled option to set message background color in WordPress panel  
 * Enabled option to set text color in WordPress panel  
 * Included some languages: English, Portuguese, Finnish, Deutsch and Italian  
