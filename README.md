@@ -6,6 +6,8 @@
 **License:** GPLv2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
+![WP Outdated Browser](http://deblynprado.com/wordpress/wp-content/uploads/2014/07/banner-772x250.jpg)  
+
 Show a message if the user is using an outdated browser.
 
 ***Actually this plugin uses the version 1.0.2 of Outdated Browser***
