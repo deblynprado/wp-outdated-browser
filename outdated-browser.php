@@ -4,7 +4,7 @@
 * Description: This plugin show a message if your browser is outdated.
 * Version: 1.0.0
 * Author: Deblyn Prado
-* Text Domain: outdated-browser
+* Text Domain: outbws
 * Domain Path: /languages
 * Author URI: http://deblynprado.com
 * License: GPL2
@@ -39,7 +39,7 @@ class OutdatedBrowser {
   function avalio_parametros_page() {
 	  global $outdated_param;
 	  $outdated_param = add_menu_page(
-	  	__( 'Outdated Options', 'outdated-browser' ),	// Page Title
+	  	__( 'Outdated Options', 'outbws' ),	// Page Title
 	  	'Outdated Browser',														// Menu Name
 	  	'activate_plugins',														// Capabilities
 	  	'outdated-browser-options',										// Page Slug
@@ -57,7 +57,7 @@ class OutdatedBrowser {
 	 	// Creating Sections
 	 	add_settings_section(
 			'outdated_general_section',										// Section id
-			__( 'General Options', 'outdated-browser' ),	// Section title
+			__( 'General Options', 'outbws' ),	// Section title
 			array( $this, 'general_section_callback' ),		// Callback with Section HTML
 			'outdated-browser-options'										// Page slug where is section will apear
 		);
@@ -65,7 +65,7 @@ class OutdatedBrowser {
 	 	// Creating Settings
 	 	add_settings_field(
 			'background-color',														// Setting name
-			__( 'Background color', 'outdated-browser' ),	// Setting Label
+			__( 'Background color', 'outbws' ),	// Setting Label
 			array( $this, 'color_setting_callback' ),						// Callback with the HTML of setting (any HTML element)
 			'outdated-browser-options',										// Slug the page where he will apear
 			'outdated_general_section'										// Section where he will apear
@@ -73,7 +73,7 @@ class OutdatedBrowser {
 
 		add_settings_field(
 			'font-color',														// Setting name
-			__( 'Font color', 'outdated-browser' ),	// Setting Label
+			__( 'Font color', 'outbws' ),	// Setting Label
 			array( $this, 'font_setting_callback' ),						// Callback with the HTML of setting (any HTML element)
 			'outdated-browser-options',										// Slug the page where he will apear
 			'outdated_general_section'										// Section where he will apear
@@ -81,7 +81,7 @@ class OutdatedBrowser {
 
 		add_settings_field(
 			'browser',																		// Setting name
-			__( 'More than', 'outdated-browser' ),	// Setting Label
+			__( 'More than', 'outbws' ),	// Setting Label
 			array( $this, 'browser_setting_callback' ),			// Callback with the HTML of setting (any HTML element)
 			'outdated-browser-options',										// Slug the page where he will apear
 			'outdated_general_section',										// Section where he will apear
@@ -95,13 +95,13 @@ class OutdatedBrowser {
 
 		add_settings_field(
 			'language',																		// Setting name
-			__( 'Select Language', 'outdated-browser' ),	// Setting Label
+			__( 'Select Language', 'outbws' ),	// Setting Label
 			array( $this, 'lang_setting_callback' ),			// Callback with the HTML of setting (any HTML element)
 			'outdated-browser-options',										// Slug the page where he will apear
 			'outdated_general_section',										// Section where he will apear
 			$langs = array(
-				'en'		=> __( 'English', 'outdated-browser' ),
-				'pt-BR'	=> __( 'Portuguese', 'outdated-browser'),
+				'en'		=> __( 'English', 'outbws' ),
+				'pt-BR'	=> __( 'Portuguese', 'outbws'),
 				'es'		=> __( 'Spanish', 'outdatd-browser')
 			)			
 		);
@@ -123,7 +123,7 @@ class OutdatedBrowser {
 	 //
 	 
 	 function general_section_callback() {
-	 	echo __( 'Customize the message apearance', 'outdated-browser' );
+	 	echo __( 'Customize the message apearance', 'outbws' );
 	 }
 	 
 	 // ------------------------------------------------------------------
@@ -195,7 +195,7 @@ class OutdatedBrowser {
 	}
 
 	function outdated_textdomain() {
-		load_plugin_textdomain( 'outdated-browser', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+		load_plugin_textdomain( 'outbws', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 	}	
 
 	function outdated_browser(){
@@ -203,11 +203,11 @@ class OutdatedBrowser {
 		* Setting the HTML content.
 		*/
 		echo ( '<div id="outdated"><h6>' );
-		echo __( 'Your browser is out-of-date!', 'outdated-browser' );
+		echo __( 'Your browser is out-of-date!', 'outbws' );
 		echo ( '</h6><p>' );
-		echo __( 'Update your browser to view this website correctly.', 'outdated-browser' );
+		echo __( 'Update your browser to view this website correctly.', 'outbws' );
 		echo ( '<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">' );
-		echo __( 'Update my browser now', 'outdated-browser' );
+		echo __( 'Update my browser now', 'outbws' );
 		echo ( '</a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p></div> ');		
 		$this->outdated_scripts($this->get_setting_saved());
 	}
