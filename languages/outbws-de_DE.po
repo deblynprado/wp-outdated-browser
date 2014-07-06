@@ -1,0 +1,31 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: outbws\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-outdated-browser\n"
+"POT-Creation-Date: 2014-07-06 00:57:14+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-07-05 23:37-0300\n"
+"Last-Translator: Deblyn Prado <deblynprado@hotmail.com>\n"
+"Language-Team: LANGUAGE <localhost@localhost.com>\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+#: outdated-browser.php:206
+msgid "Your browser is out-of-date!"
+msgstr "Ihr Browser ist veraltet!"
+
+#: outdated-browser.php:208
+msgid "Update your browser to view this website correctly."
+msgstr ""
+"Bitte aktualisieren Sie Ihren Browser, um diese Website korrekt dazustellen."
+
+#: outdated-browser.php:210
+msgid "Update my browser now"
+msgstr "Den Browser jetzt aktualisieren"
