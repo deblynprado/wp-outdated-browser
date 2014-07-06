@@ -7,7 +7,7 @@
 * Text Domain: outbws
 * Domain Path: languages
 * Author URI: http://deblynprado.com
-* License: GPL2
+* License: GPL2 or later
 */
 
 /**
