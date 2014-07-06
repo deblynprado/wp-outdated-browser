@@ -91,26 +91,12 @@ class OutdatedBrowser {
 				'boxShadow'			=> 'IE9',
 				'borderSpacing'	=> 'IE8'
 			)			
-		);
-
-		add_settings_field(
-			'language',																		// Setting name
-			__( 'Select Language', 'outbws' ),	// Setting Label
-			array( $this, 'lang_setting_callback' ),			// Callback with the HTML of setting (any HTML element)
-			'outdated-browser-options',										// Slug the page where he will apear
-			'outdated_general_section',										// Section where he will apear
-			$langs = array(
-				'en'		=> __( 'English', 'outbws' ),
-				'pt-BR'	=> __( 'Portuguese', 'outbws'),
-				'es'		=> __( 'Spanish', 'outdatd-browser')
-			)			
-		);
+		);		
 	 	
 	 	// Register all settings
 	 	register_setting( 'outdated-browser-options', 'background-color' );
 	 	register_setting( 'outdated-browser-options', 'font-color' );
-	 	register_setting( 'outdated-browser-options', 'browser' );
-	 	register_setting( 'outdated-browser-options', 'language' );
+	 	register_setting( 'outdated-browser-options', 'browser' );	 	
 	 }
 	 
 	  
@@ -147,15 +133,7 @@ class OutdatedBrowser {
 	 		echo '<option id="language" value="' . $key . '" ' . selected( get_option( 'browser' ), $key, true ) . '>' . $browser . '</option>';
 	 	endforeach;
 	 	echo '</select>';
-	 }
-
-	 function lang_setting_callback( $langs ) {	
-	 	echo '<select name="language">';
-	 	foreach( $langs as $key => $lang ) :
-	 		echo '<option id="language" value="' . $key . '" ' . selected( get_option( 'language' ), $key, true ) . '>' . $lang . '</option>';
-	 	endforeach;
-	 	echo '</select>';
-	 }
+	 }	 
 
   function print_html_options() { ?>
 		<form method="POST" action="options.php">
