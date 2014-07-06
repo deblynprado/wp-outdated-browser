@@ -4,11 +4,11 @@
     // Add Color Picker to all inputs that have 'color-field' class
     $(function() {
         $('#font-color').wpColorPicker({
-            defaultColor: 'ffffff'
+            defaultColor: '#ffffff'
         });
 
         $('#bkg-color').wpColorPicker({
-            defaultColor: 'f25648'
+            defaultColor: '#f25648'
         });
     });
      
