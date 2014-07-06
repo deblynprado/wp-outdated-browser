@@ -75,7 +75,7 @@ class OutdatedBrowser {
 
 		add_settings_field(
 			'browser',																		// Setting name
-			__( 'More than', 'outbws' ),									// Setting Label
+			__( 'Lower than', 'outbws' ),									// Setting Label
 			array( $this, 'browser_setting_callback' ),		// Callback with the HTML of setting (any HTML element)
 			'outdated-browser-options',										// Slug the page where he will apear
 			'outdated_general_section',										// Section where he will apear
