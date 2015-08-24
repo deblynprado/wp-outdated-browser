@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: '<%= pkg.name %>-<%= pkg.version %>.zip'
+          archive: '<%= pkg.name %>.zip'
         },
         files: [
         {src:['**', '!*.zip', '!*.git', '!*.gitignore', '!*.DS_Store', '!*.md', '!*.json', '!Gruntfile.js', '!node_modules/**', '!original/**', '!PSDs/**']}
