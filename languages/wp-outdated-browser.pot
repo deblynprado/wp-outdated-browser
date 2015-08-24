@@ -1,0 +1,66 @@
+# Copyright (C) 2015 WP Outdated Browser
+# This file is distributed under the same license as the WP Outdated Browser package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Outdated Browser 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-outdated-"
+"browser\n"
+"POT-Creation-Date: 2015-08-24 15:17:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: outdated-browser.php:36
+msgid "Outdated Options"
+msgstr ""
+
+#: outdated-browser.php:54
+msgid "General Options"
+msgstr ""
+
+#: outdated-browser.php:62
+msgid "Background color"
+msgstr ""
+
+#: outdated-browser.php:70
+msgid "Font color"
+msgstr ""
+
+#: outdated-browser.php:78
+msgid "Lower than"
+msgstr ""
+
+#: outdated-browser.php:101
+msgid "Customize the message apearance"
+msgstr ""
+
+#: outdated-browser.php:179
+msgid "Your browser is out-of-date!"
+msgstr ""
+
+#: outdated-browser.php:181
+msgid "Update your browser to view this website correctly."
+msgstr ""
+
+#: outdated-browser.php:183
+msgid "Update my browser now"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Outdated Browser"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin show a message if your browser is outdated."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Deblyn Prado"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://deblynprado.com"
+msgstr ""
