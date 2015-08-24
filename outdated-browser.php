@@ -175,9 +175,9 @@ class OutdatedBrowser {
 	* Put the Outdated Browser HTML in theme.
 	*/
 	function outdated_browser() {
-		echo ( '<div id="outdated"><h6>' );
+		echo ( '<div id="outdated"><span>' );
 		echo __( 'Your browser is out-of-date!', 'outbws' );
-		echo ( '</h6><p>' );
+		echo ( '</span><p>' );
 		echo __( 'Update your browser to view this website correctly.', 'outbws' );
 		echo ( '<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">' );
 		echo __( 'Update my browser now', 'outbws' );
