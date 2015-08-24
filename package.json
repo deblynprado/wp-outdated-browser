@@ -1,6 +1,6 @@
 {
   "name": "wp-outdated-browser",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An outdated browser checker for WordPress",
   "main": "Gruntfile.js",
   "scripts": {
@@ -11,13 +11,12 @@
     "url": "git://github.com/deblynprado/wp-outdated.git"
   },
   "author": "deblynprado",
-  "license": "GPLv2 or later",
-  "readmeFilename": "README.md",
-  "gitHead": "48d8437170a8cd277aff4d02b620d1ac04cfce87",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/deblynprado/wp-outdated/issues"
   },
-  "dependencies": {
-    "grunt-zip" : ">=0.15.0"
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compress": "~0.13.0"
   }
 }
