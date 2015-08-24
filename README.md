@@ -27,6 +27,9 @@ This is a plugin to check if your user is using the lastest version of a browser
 Nothing! This plugin just works if your using a outdated browser.   
 
 ##Changelog##
+2.1.1 - 24/08/2015  
+* Fixing file names
+
 2.1.0 - 24/08/2015  
 * Updated Outdated to version 1.1.1  
 * Added Danish lang
