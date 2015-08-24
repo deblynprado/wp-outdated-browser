@@ -4,4 +4,4 @@ outdatedBrowser({
    lowerThan: outOptions.browser
 })
 
-console.log(outdatedBrowser);
+//console.log(outdatedBrowser);
